@@ -1,12 +1,17 @@
 {
-  "team": "",
-  "members": [],
-  "incident": "",
-  "decision_v1": "",
-  "decision_v2": "",
+  "team": "K5-L3A-DAY10-Siuuuu-PoCtoPilotGate1",
+  "members": [
+    "HoVaTenTruongNhom-2A202603570",
+    "HoVaTenTV2-MSSV",
+    "HoVaTenTV3-MSSV",
+    "HoVaTenTV4-MSSV"
+  ],
+  "incident": "S4",
+  "decision_v1": "Tiếp tục",
+  "decision_v2": "Thu hẹp",
   "three_lines": {
-    "environment_assumption": "",
-    "reduce_or_prevent": "",
-    "measure_in_pilot": ""
+    "environment_assumption": "Ticket tới rải đều và số ca cần người luôn dưới sức 1 người duyệt (6 ca/giờ), trong khi đêm 11.11 có 31/41 ticket dồn vào ~80 phút đúng lúc LLM trả 429 ở 60% lần kiểm chính sách.",
+    "reduce_or_prevent": "NGĂN được tiền hoàn sai, lỗi oan cho hãng và vượt ngân sách (cổng G1, G2 tính lại từ tracking DB + chính sách + ops_limits, không đọc kết quả LLM: S4 hoàn sai 160.000đ → 0, lỗi oan 27 → 0), nhưng chỉ GIẢM hàng chờ ùn (thu hẹp còn 2 kho HN, HCM: 11 → 0 ca ùn, 136 → 24 phút) vì một đợt sale lớn hơn trong chính 2 kho đó vẫn có thể vượt sức 1 người.",
+    "measure_in_pilot": "Phân bố giờ tới của ticket ngày sale và số ca cần người theo từng giờ ở HN, HCM (monitor review_peak_per_hour), số phút thật NV-HANH cần cho mỗi ca vỡ/thất lạc, tần suất và độ dài lỗi 429 của nhà cung cấp LLM, và độ đúng của delay_cause trong tracking DB mà cổng G1, G2 dựa vào."
   }
 }

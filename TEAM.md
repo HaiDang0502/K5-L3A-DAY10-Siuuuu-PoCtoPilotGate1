@@ -5,7 +5,7 @@
 - Tên nhóm (`TenNhom`, không dấu, không khoảng trắng): Siuuuu
 - Lớp: `L3A`
 - Repo của bàn: `K5-L3A-DAY10-Siuuuu-PoCtoPilotGate1`
-- Thẻ sự cố đã bốc (S1–S8): (điền ở phút 125)
+- Thẻ sự cố đã bốc (S1–S8): S4
 
 ## Thành viên
 

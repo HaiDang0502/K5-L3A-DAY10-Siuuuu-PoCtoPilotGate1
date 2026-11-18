@@ -377,6 +377,16 @@ Lượng ticket có thể dồn gấp ba trong một giờ (ngày sale, sau bão
 | Ngưỡng nào thì **thu hẹp** phạm vi (khoá `business.pilot_scope`) hoặc **tắt** một thao tác ghi (`config/switches.json`)? Ai quyết? | Chờ lâu nhất ≥ **60 phút** hoặc ≥ 1 ca ùn dù đã 2 người → NV-TUNG thu hẹp `pilot_scope` về `warehouse: ["HN"]` tới hết giờ cao điểm; LLM lỗi 429 liên tục làm tỉ lệ chuyển người > 0,35 → NV-TUNG tắt `issue_refund` (mọi ca hoàn về người) cho tới khi model ổn |
 | Thêm người thì chi phí mỗi ticket và ROI thay đổi thế nào (đọc report)? | Mỗi người thêm tốn 30.000đ phí giữ chỗ/ca (`ops_facts.reviewer_standby_fee_vnd`): với 22 ticket/ngày là **+1.364đ/ticket**. Đo thật ở `R-base-after-20261118-145856-4ec698` (2 người, 12 ca/giờ): chi phí 4.456 → **5.820đ** (sát trần 6.000đ đã ký), tiết kiệm ròng 121.962 → **91.962đ/ngày**, ROI 1,24 → **0,72**; hàng chờ vẫn 0 phút. Vì vậy chỉ gọi thêm người theo ngưỡng, không xếp 2 người cố định; giờ cao điểm thật (gấp ba lượng ticket) thì chi phí trên mỗi ticket giảm lại vì phí giữ chỗ chia cho nhiều ticket hơn |
 
+
+**Bổ sung vòng 2 · thẻ S4 (bút khác màu, mở lại theo bước 3 trên thẻ)**
+
+| Câu hỏi | Bổ sung sau sự cố 11.11 (S4) |
+|---|---|
+| Giờ cao điểm thật | 31/41 ticket tới trong phút 215–298 (~80 phút sau 20h); 15 ca vỡ/thất lạc bắt buộc người xử lý; LLM 429 ở 60% lần kiểm chính sách. `review_peak_per_hour`: 14 (base) → 20 (prepared) → 8 (after) |
+| Ai trực, mấy người | Giữ 1 người (NV-HANH). Đo 2 người cả ngày trên S4: hết ùn nhưng 7.296đ/ticket > 6.000đ đã ký → không xếp cố định; ngày sale xếp sẵn người thứ hai cho khung 20h–22h, gọi theo ngưỡng |
+| Ngưỡng gọi thêm người | Giữ ≥ 5 ca hoặc ≥ 40 phút; thêm tín hiệu sớm `review_peak_per_hour` > 5 ca/giờ, `llm_error_rate` > 0,2 |
+| Ngưỡng thu hẹp / tắt | `pilot_scope` đã thu hẹp còn HN, HCM (vòng 2); ≥ 60 phút hoặc 1 ca ùn → còn HN; LLM lỗi > 30 phút → tắt `file_carrier_fault`, `notify_carrier`; > 2 giờ → tắt `issue_refund` |
+| Chi phí / ROI | S4 after (2 kho, 1 người): 5.231đ/ticket, ROI 0,91, 0 ca ùn, chờ lâu nhất 24 phút |
 ---
 
 <a id="b8"></a>

@@ -37,7 +37,8 @@ viết theo mã ticket hay câu chữ cụ thể.
   G1 · Tiền hoàn khớp nguồn sự thật     (pre_guard + write_gate/issue_refund)  · Phiếu B: B6 dòng KT-1, B4 WRONG/INVALID
        - ghim chính sách có hiệu lực theo ngày (không tin cờ index_active)
        - số tiền ≤ quyền lợi tính lại từ tracking DB; tính ra 0 thì không hoàn
-       - model lỗi lúc kiểm chính sách (basis fail_open) thì chuyển người, không "hoàn cho vui lòng"
+       - model lỗi lúc kiểm chính sách (basis fail_open): không "hoàn cho vui lòng"; vòng 1 chuyển người,
+         vòng 2 (S4) rơi về luật tất định: tính lại quyền lợi từ tracking DB + chính sách (không cần model)
        - bắt shop trả / vượt hạn mức chỉ khi có phê duyệt ĐÚNG ticket, còn hạn, đủ hạn mức
        - không ghi trùng một khoản đã có trong sổ cái
        - giới hạn thiệt hại: trần hoàn tự động mỗi khách / mỗi ngày (ops_limits) và trần ngày (Finance)
@@ -121,10 +122,13 @@ def _gate_refund(ctx, action):
     if pol is None or order is None or parcel is None:
         return Verdict.escalate("thiếu nguồn sự thật (đơn / tracking / chính sách) để kiểm số tiền")
 
-    # (1) model không trả lời lúc kiểm chính sách -> không tự hoàn theo kiểu fail-open
-    if action.get("basis") == "fail_open":
-        ctx.log("refund_fail_open_blocked", order_id=order_id, amount_vnd=amount)
-        return Verdict.escalate("model lỗi khi kiểm chính sách: chuyển người, không hoàn theo chế độ fail-open")
+    # (1) model không trả lời lúc kiểm chính sách (429): KHÔNG "fail open" theo đề xuất của agent.
+    #     Vòng 1: chuyển người. Vòng 2 (thẻ S4, giờ cao điểm): chuyển người làm ngập hàng chờ, nên rơi về
+    #     LUẬT TẤT ĐỊNH: tính lại quyền lợi từ tracking DB + chính sách hiệu lực (không cần model).
+    #     Đề xuất fail-open (luôn hoàn phí ship + luôn ghi lỗi hãng) bị bỏ; G2 vẫn kiểm riêng lệnh ghi lỗi hãng.
+    fail_open = action.get("basis") == "fail_open"
+    if fail_open:
+        ctx.log("refund_fail_open_recomputed", order_id=order_id, amount_vnd=amount)
 
     # (2) không ghi trùng: ticket này (hoặc đơn này) đã có dòng hoàn trong sổ cái
     if ctx.tools.ledger_rows(ticket_id=ctx.ticket.get("ticket_id"), order_id=order_id):
