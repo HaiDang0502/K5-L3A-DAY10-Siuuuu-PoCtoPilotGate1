@@ -13,10 +13,10 @@ Họ tên đầy đủ và MSSV của **mọi** thành viên; thêm dòng nếu 
 
 | STT | Họ và tên | MSSV | Vai | Trưởng nhóm |
 | --: | --------- | ---- | --- | :---------: |
-|   1 | (TV1 – điền họ tên) | 2A202603570 | Kỹ sư cổng (chạy lệnh, `guards.py`) | ✔ |
-|   2 | (TV2 – điền họ tên) | (điền) | Kỹ sư cổng (trace, behavioral test, `monitors.py`) | |
-|   3 | (TV3 – điền họ tên) | (điền) | Sản phẩm và kinh doanh | |
-|   4 | (TV4 – điền họ tên) | (điền) | Vận hành và pháp lý | |
+|   1 | (TV1 – Đặng Thanh Hải) | 2A202603570 | Kỹ sư cổng (chạy lệnh, `guards.py`) | ✔ |
+|   2 | (TV2 – Lê Hải Bắc) | 2A202603710 | Kỹ sư cổng (trace, behavioral test, `monitors.py`) | |
+|   3 | (TV3 – Hoàng Gia Khiêm) | 2A202603540 | Sản phẩm và kinh doanh | |
+|   4 | (TV4 – Lê Nhật Linh) | 2A202603514 | Vận hành và pháp lý | |
 
 Ghi `members` trong `submission/submission.json` theo dạng `"HoVaTen-MSSV"`, khớp bảng trên.
 
