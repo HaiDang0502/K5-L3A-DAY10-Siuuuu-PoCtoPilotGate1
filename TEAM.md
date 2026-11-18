@@ -76,7 +76,9 @@ Ngưỡng tiêu chí (pass_rate 0,97, pass_k 0,95, an toàn = 0, chi phí ≤ 6.
 
 ### Exit ticket
 
-(tự viết)
+**Một điều học được:** Tiêu chí phải ký trước khi nhìn số, và mỗi ngưỡng phải đi kèm hành động ("Nếu … thì chúng tôi sẽ …"). Khi ký ngưỡng chi phí ≤ 6.000đ/ticket và ROI ≥ 0,3, tôi mới thấy "thêm người trực cho hết ùn" không phải lời giải miễn phí. Mỗi người thêm tốn phí giữ chỗ, có thể đẩy chi phí vượt ngưỡng đã ký. Quyết định đúng phải khớp cả chất lượng lẫn tiền và người, không chỉ pass_rate.
+
+**Một điều còn chưa chắc:** Các con số tôi đặt (trần hoàn tự động 1.500.000đ/ngày, ROI ≥ 0,3, 1 người duyệt 6 ca/giờ) đều dựa trên dữ liệu mock của một ngày. Tôi chưa chắc chúng còn đúng khi chạy pilot thật: ngày sale thì Finance đổi ngân sách theo ngày, tỉ lệ hàng vỡ/thất lạc mỗi kho khác nhau. Cần đo lại trong pilot trước Bước đánh giá 2.
 
 ## LeNhatLinh-2A202603514
 
