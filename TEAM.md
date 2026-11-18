@@ -40,7 +40,11 @@ Commit `1ae6b1b` (Sign acceptance criteria), `bffc297` (chốt vòng 1); `runs/R
 
 ### Exit ticket
 
-(tự viết) · Đã dùng trợ lý AI để soạn nháp cổng và phiếu; bàn đã đọc lại và giải thích được từng con số.
+**Một điều học được:** Chốt cổng trước khi biết thẻ S4 giúp tách phần an toàn khỏi phần vận hành: ở mốc prepared, tiền hoàn sai và lỗi oan cho hãng đều về 0, nhưng vẫn còn 11 ca ùn. Tôi phải đọc cả ba mốc và đối chiếu với tiêu chí đã ký, không chỉ nhìn số lỗi bằng 0.
+
+**Một điều còn chưa chắc:** G1 và G2 dựa vào tracking DB và chính sách theo ngày. Nếu dữ liệu nguồn ghi sai nguyên nhân trễ hoặc ngày giao, cổng vẫn có thể quyết định sai. Cần đối soát dữ liệu thật và chạy lại khi chính sách đổi trước Gate 2.
+
+**Sử dụng AI:** Tôi đã dùng trợ lý AI để soạn nháp cổng và phiếu; tôi và nhóm đọc lại, kiểm tra bằng report và chịu trách nhiệm giải thích các con số.
 
 ## LeHaiBac-2A202603710
 
@@ -58,7 +62,9 @@ Phiếu B mục B2, B7.3; Phiếu A mục A2 (cột Offline), A3.
 
 ### Exit ticket
 
-(tự viết)
+**Một điều học được:** Trace của một ticket cho thấy đường đi tới lỗi, còn behavioral test trên ticket khác kiểm tra cổng có giữ được quy tắc hay không. Với S4, `review_peak_per_hour` tăng từ 1 ở bộ nền lên 20 ở mốc prepared; chỉ nhìn `pass_rate` sẽ bỏ sót hàng chờ của người duyệt.
+
+**Một điều còn chưa chắc:** Ngưỡng cảnh báo > 5 ca/giờ dựa trên công suất giả định 6 ca/giờ của một người. Khi pilot thật, cần đo thời gian duyệt từng loại ca và thời điểm ticket tới để biết cảnh báo có đủ sớm không.
 
 ## HoangGiaKhiem-2A202603540
 
@@ -96,4 +102,6 @@ Phiếu B mục B4, B5, B7.5, B7.6; `config/operating_gates.json`.
 
 ### Exit ticket
 
-(tự viết)
+**Một điều học được:** Cổng an toàn chuyển thêm ca cho người duyệt có thể làm vận hành quá tải. Ở mốc prepared của S4, 11 ca bị ùn và chờ lâu nhất 136 phút; thêm người trực cố định cũng tăng chi phí. Vì vậy runbook cần có người chịu trách nhiệm, ngưỡng gọi thêm người và điều kiện thu hẹp phạm vi.
+
+**Một điều còn chưa chắc:** Số liệu mock chưa cho biết người trực mất bao lâu với ca vỡ hoặc thất lạc trong ngày sale thật. Cần đo hàng chờ theo giờ, thời gian xử lý thực tế và kiểm tra việc trực ca có làm đúng ngưỡng dừng trước khi mở rộng pilot.
