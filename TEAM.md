@@ -13,10 +13,10 @@ Họ tên đầy đủ và MSSV của **mọi** thành viên; thêm dòng nếu 
 
 | STT | Họ và tên | MSSV | Vai | Trưởng nhóm |
 | --: | --------- | ---- | --- | :---------: |
-|   1 | (TV1 – Đặng Thanh Hải) | 2A202603570 | Kỹ sư cổng (chạy lệnh, `guards.py`) | ✔ |
-|   2 | (TV2 – Lê Hải Bắc) | 2A202603710 | Kỹ sư cổng (trace, behavioral test, `monitors.py`) | |
-|   3 | (TV3 – Hoàng Gia Khiêm) | 2A202603540 | Sản phẩm và kinh doanh | |
-|   4 | (TV4 – Lê Nhật Linh) | 2A202603514 | Vận hành và pháp lý | |
+|   1 | Đặng Thanh Hải | 2A202603570 | Kỹ sư cổng (chạy lệnh, `guards.py`) | ✔ |
+|   2 | Lê Hải Bắc | 2A202603710 | Kỹ sư cổng (trace, behavioral test, `monitors.py`) | |
+|   3 | Hoàng Gia Khiêm | 2A202603540 | Sản phẩm và kinh doanh | |
+|   4 | Lê Nhật Linh | 2A202603514 | Vận hành và pháp lý | |
 
 Ghi `members` trong `submission/submission.json` theo dạng `"HoVaTen-MSSV"`, khớp bảng trên.
 
@@ -42,7 +42,7 @@ Commit `1ae6b1b` (Sign acceptance criteria), `bffc297` (chốt vòng 1); `runs/R
 
 (tự viết) · Đã dùng trợ lý AI để soạn nháp cổng và phiếu; bàn đã đọc lại và giải thích được từng con số.
 
-## LeHaiBac-2A202603710 (TV2)
+## LeHaiBac-2A202603710
 
 ### Phần việc phụ trách
 
@@ -60,7 +60,7 @@ Phiếu B mục B2, B7.3; Phiếu A mục A2 (cột Offline), A3.
 
 (tự viết)
 
-## HoangGiaKhiem-2A202603540 (TV3)
+## HoangGiaKhiem-2A202603540
 
 ### Phần việc phụ trách
 
@@ -78,7 +78,7 @@ Ngưỡng tiêu chí (pass_rate 0,97, pass_k 0,95, an toàn = 0, chi phí ≤ 6.
 
 (tự viết)
 
-## LeNhatLinh-2A202603514 (TV4)
+## LeNhatLinh-2A202603514
 
 ### Phần việc phụ trách
 
