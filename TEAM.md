@@ -24,7 +24,7 @@ Ghi `members` trong `submission/submission.json` theo dạng `"HoVaTen-MSSV"`, k
 
 Mỗi thành viên tự viết một mục bên dưới (chép mẫu, đổi tiêu đề thành họ tên không dấu và MSSV, ví dụ `## NguyenVanAn-20241234`).
 
-## HoVaTen-2A202603570
+## DangThanhHai-2A202603570
 
 ### Phần việc phụ trách
 
@@ -42,7 +42,7 @@ Commit `1ae6b1b` (Sign acceptance criteria), `bffc297` (chốt vòng 1); `runs/R
 
 (tự viết) · Đã dùng trợ lý AI để soạn nháp cổng và phiếu; bàn đã đọc lại và giải thích được từng con số.
 
-## HoVaTen-MSSV (TV2)
+## LeHaiBac-2A202603710 (TV2)
 
 ### Phần việc phụ trách
 
@@ -60,7 +60,7 @@ Phiếu B mục B2, B7.3; Phiếu A mục A2 (cột Offline), A3.
 
 (tự viết)
 
-## HoVaTen-MSSV (TV3)
+## HoangGiaKhiem-2A202603540 (TV3)
 
 ### Phần việc phụ trách
 
@@ -78,7 +78,7 @@ Ngưỡng tiêu chí (pass_rate 0,97, pass_k 0,95, an toàn = 0, chi phí ≤ 6.
 
 (tự viết)
 
-## HoVaTen-MSSV (TV4)
+## LeNhatLinh-2A202603514 (TV4)
 
 ### Phần việc phụ trách
 
